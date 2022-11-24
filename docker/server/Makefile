@@ -13,10 +13,14 @@ setup:
 install: \
 	setup \
 	update \
+	/opt/puppetlabs/bin/puppet \
 	/opt/puppetlabs/bin/puppetserver
 
 update:
 	yum update -y
+
+/opt/puppetlabs/bin/puppet:
+	yum install -y puppet
 
 /opt/puppetlabs/bin/puppetserver:
 	yum install -y puppetserver
