@@ -4,7 +4,7 @@ help:
 	@cat $(firstword $(MAKEFILE_LIST))
 
 setup:
-	rpm -U https://yum.puppet.com/puppet7-release-el-8.noarch.rpm
+	rpm -U https://yum.puppet.com/puppet7-release-el-7.noarch.rpm
 
 install: \
 	setup \
