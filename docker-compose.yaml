@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  puppet:
+    build: docker/server
+    working_dir: /opt/tamakiii-sandbox/hello-puppet
+    volumes:
+      - .:/opt/tamakiii-sandbox/hello-puppet
+
+  deployee:
+    build: docker/client
