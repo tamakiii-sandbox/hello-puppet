@@ -33,4 +33,11 @@ COPY Makefile /tmp/Makefile
 RUN make -C /tmp install && \
     rm -rf /tmp/Makefile
 
-CMD ["/opt/puppetlabs/bin/puppetserver", "foreground"]
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY docker-entrypoint.d /docker-entrypoint.d
+COPY healthcheck.sh /healthcheck.sh
+
+HEALTHCHECK --interval=20s --timeout=15s --retries=12 --start-period=3m CMD ["/healthcheck.sh"]
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["foreground"]
