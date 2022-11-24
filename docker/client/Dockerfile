@@ -1,4 +1,4 @@
-FROM amazonlinux:2.0.20221103.3
+FROM --platform=linux/amd64 amazonlinux:2.0.20221103.3
 
 RUN yum update && \
     amazon-linux-extras enable \
