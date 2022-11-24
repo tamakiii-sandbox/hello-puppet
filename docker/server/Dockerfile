@@ -13,4 +13,4 @@ COPY Makefile /tmp/Makefile
 RUN make -C /tmp install && \
     rm -rf /tmp/Makefile
 
-CMD ["/opt/puppetlabs/bin/puppetserver", "start"]
+CMD ["/opt/puppetlabs/bin/puppetserver", "foreground"]
